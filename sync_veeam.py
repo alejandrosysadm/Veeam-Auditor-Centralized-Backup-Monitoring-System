@@ -19,9 +19,9 @@ def sincronizar_outlook():
         outlook = win32com.client.Dispatch("Outlook.Application").GetNamespace("MAPI")
         
         # Seleccionamos la cuenta específica
-        cuenta = next((s for s in outlook.Stores if "alarmas@laberit.com" in s.DisplayName.lower()), None)
+        cuenta = next((s for s in outlook.Stores if "CUENTA A MONITORIZAR" in s.DisplayName.lower()), None)
         if not cuenta:
-            print("❌ No se encontró la cuenta alarmas@laberit.com en Outlook.")
+            print("❌ No se encontró la cuenta CUENTA A MONITORIZAR en Outlook.")
             return
 
         root = cuenta.GetRootFolder()
