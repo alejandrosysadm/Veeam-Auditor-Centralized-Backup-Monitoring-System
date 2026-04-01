@@ -1,0 +1,10 @@
+CREATE TABLE backups (
+    id SERIAL PRIMARY KEY,
+    cliente VARCHAR(100) NOT NULL,
+    job_name VARCHAR(250) NOT NULL,
+    status VARCHAR(50) NOT NULL,
+    fecha TIMESTAMP NOT NULL,
+    log_cuerpo TEXT,
+    revisado BOOLEAN DEFAULT FALSE,
+    CONSTRAINT unique_backup_entry UNIQUE (cliente, job_name, fecha)
+);
